@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Loginpennal from './pages/Loginpennal';
+import Carddetail from './components/Carddetail';
+import Signuppennal from './pages/Signuppennal';
+import { Routes, Route, Outlet } from 'react-router-dom';
+
+import Home from './pages/Home';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <>
+     
+      <Routes>
+        <Route path='/' element={<Signuppennal />}></Route>
+        <Route path='/login' element={<Loginpennal />}></Route>
+       
+      </Routes>
+      <Header />
+      <Routes>
+      <Route path='/home' element={<Home />}></Route>
+        <Route path='/carddetail/:id' element={<Carddetail />}></Route>
+      </Routes>
+      </>
     </div>
   );
 }
 
 export default App;
+
